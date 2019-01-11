@@ -1,0 +1,2 @@
+# MedicalInsuranceSystem
+东北大学软院大一下课设，医疗保险报销系统JavaFx
