@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ComSearchController">
+   <children>
+      <ImageView fitHeight="495.0" fitWidth="808.0" layoutX="-4.0" layoutY="-1.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@background1.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="comSearchButton" layoutX="262.0" layoutY="308.0" mnemonicParsing="false" onAction="#comSearch" prefHeight="34.0" prefWidth="75.0" text="查询">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="84.0" layoutY="152.0" prefHeight="39.0" prefWidth="146.0" text="请输入：">
+         <font>
+            <Font name="FZShuTi" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="comSearchField" layoutX="229.0" layoutY="153.0" prefHeight="34.0" prefWidth="254.0" promptText="按编号/名称查询" />
+      <Button fx:id="backButton" layoutX="513.0" layoutY="309.0" mnemonicParsing="false" onAction="#back" text="返回">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

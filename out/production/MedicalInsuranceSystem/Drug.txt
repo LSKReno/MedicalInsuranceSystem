@@ -1,0 +1,6 @@
+药品ID,药品名称,收费项目等级,医院等级
+0001,Aspirin,3,3
+0002,Amoxicillin,2,3
+0003,Morphine,2,1
+0004,Aspirin1,2,2
+0005,Aspirin2,1,2

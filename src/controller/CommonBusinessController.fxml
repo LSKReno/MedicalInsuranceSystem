@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="527.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CommonBusinessController">
+    <children>
+        <TabPane prefHeight="527.0" prefWidth="873.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="人员信息维护">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane prefHeight="500.0" prefWidth="874.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <TableView fx:id="PersonTable" editable="true" prefHeight="290.0" prefWidth="259.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="PersonIDColumn" minWidth="8.000000059604645" prefWidth="95.19998174905777" text="人员编号（ID）" />
+                                                        <TableColumn fx:id="PersonNameColumn" prefWidth="89.60000610351562" text="人员姓名" />
+                                          <TableColumn fx:id="institutionIDColumn" prefWidth="75.20001220703125" text="定点机构" />
+                                                    </columns>
+                                                </TableView>
+                                                <TextField fx:id="searchPersonField" layoutX="45.0" layoutY="336.0" prefHeight="28.0" prefWidth="161.0" promptText="请输入人员ID/姓名" />
+                                                <Button fx:id="searchPersonButton" layoutX="94.0" layoutY="410.0" mnemonicParsing="false" onAction="#searchPerson" prefHeight="28.0" prefWidth="63.0" text="查询" />
+                                    <TabPane fx:id="myPersonTabPane" layoutX="259.0" prefHeight="498.0" prefWidth="614.0" tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab fx:id="seePersonTab" text="查看人员信息">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <AnchorPane layoutY="-6.0" minHeight="0.0" minWidth="0.0" prefHeight="473.0" prefWidth="615.0">
+                                                         <children>
+                                                            <Label layoutX="7.0" layoutY="6.0" prefHeight="46.0" prefWidth="186.0" text="人员详细信息">
+                                                               <font>
+                                                                  <Font name="KaiTi" size="29.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <GridPane layoutX="7.0" layoutY="61.0" prefHeight="304.0" prefWidth="595.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label prefHeight="30.0" prefWidth="70.0" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="个人ID：" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件类型：" GridPane.rowIndex="1" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件编号：" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口所在地：" GridPane.rowIndex="5" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口性质：" GridPane.rowIndex="4" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="离退休状态：" GridPane.rowIndex="3" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="定点医疗机构编号：" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="婚姻状况：" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="政治面貌：" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="文化程度：" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="民族：" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="性别：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="姓名：" GridPane.columnIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="医疗人员类别：" GridPane.rowIndex="6" />
+                                                                  <Label fx:id="personIDLabel" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="1" />
+                                                                  <Label fx:id="personNameLabel" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="3" />
+                                                                  <Label fx:id="personInstitutionIDLabel" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                                                  <Label fx:id="personCategoryLabel" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                               </children>
+                                                            </GridPane>
+                                                            <Button fx:id="backToMenuButton" layoutX="478.0" layoutY="402.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab text="新增人员信息">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="addPersonButton" layoutX="271.0" layoutY="373.0" mnemonicParsing="false" onAction="#addPerson" prefHeight="39.0" prefWidth="72.0" text="新增" />
+                                                      <Button fx:id="backToMenuButton" layoutX="500.0" layoutY="374.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                      <GridPane layoutX="9.0" layoutY="30.0" prefHeight="304.0" prefWidth="595.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label prefHeight="30.0" prefWidth="70.0" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="个人ID：" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件类型：" GridPane.rowIndex="1" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件编号：" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口所在地：" GridPane.rowIndex="5" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口性质：" GridPane.rowIndex="4" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="离退休状态：" GridPane.rowIndex="3" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="定点医疗机构编号：" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="婚姻状况：" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="政治面貌：" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="文化程度：" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="民族：" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="性别：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="姓名：" GridPane.columnIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="医疗人员类别：" GridPane.rowIndex="6" />
+                                                            <TextField fx:id="PersonIDField" GridPane.columnIndex="1" />
+                                                            <TextField fx:id="PersonNameField" GridPane.columnIndex="3" />
+                                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                            <TextField fx:id="PersonInstitutionIDField" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                                            <ComboBox fx:id="cardCategoryBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <ComboBox fx:id="retirementBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                               <tooltip>
+                                                                  <Tooltip text="0 = 没退休  1 = 退休" />
+                                                               </tooltip></ComboBox>
+                                                            <ComboBox fx:id="householdBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                            <ComboBox fx:id="medicalCategoryBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                               <tooltip>
+                                                                  <Tooltip text="11=在职职工  21=退休人员   40=享受最低保障的在职人员  41=享受最低保障的退休人员" />
+                                                               </tooltip></ComboBox>
+                                                            <ComboBox fx:id="genderBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                            <ComboBox fx:id="educationLevelBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                                            <ComboBox fx:id="PoliticalBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                            <ComboBox fx:id="MaritalBox" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                          <Tab fx:id="changePersonTab" text="修改人员信息">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button fx:id="changePersonButton" layoutX="270.0" layoutY="377.0" mnemonicParsing="false" onAction="#changePerson" prefHeight="38.0" prefWidth="74.0" text="修改" />
+                                                      <Button fx:id="backToMenuButton" layoutX="502.0" layoutY="377.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                      <GridPane layoutY="24.0" prefHeight="304.0" prefWidth="595.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label prefHeight="30.0" prefWidth="70.0" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="个人ID：" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件类型：" GridPane.rowIndex="1" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件编号：" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口所在地：" GridPane.rowIndex="5" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口性质：" GridPane.rowIndex="4" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="离退休状态：" GridPane.rowIndex="3" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="定点医疗机构编号：" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="婚姻状况：" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="政治面貌：" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="文化程度：" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="民族：" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="性别：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="姓名：" GridPane.columnIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="医疗人员类别：" GridPane.rowIndex="6" />
+                                                            <TextField fx:id="PersonIDField1" GridPane.columnIndex="1" />
+                                                            <TextField fx:id="PersonNameField1" GridPane.columnIndex="3" />
+                                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                            <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                            <TextField fx:id="PersonInstitutionIDField1" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                                            <ComboBox fx:id="cardCategoryBox1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                            <ComboBox fx:id="retirementBox1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                            <ComboBox fx:id="householdBox1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                            <ComboBox fx:id="medicalCategoryBox1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                               <tooltip>
+                                                                  <Tooltip text="11=在职职工  21=退休人员   40=享受最低保障的在职人员  41=享受最低保障的退休人员" />
+                                                               </tooltip>
+                                                            </ComboBox>
+                                                            <ComboBox fx:id="genderBox1" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                            <ComboBox fx:id="educationLevelBox1" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                                            <ComboBox fx:id="PoliticalBox1" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                                            <ComboBox fx:id="MaritalBox1" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                          <Tab fx:id="deletePersonTab" text="删除人员信息">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <AnchorPane layoutX="-1.0" layoutY="-3.0" minHeight="0.0" minWidth="0.0" prefHeight="473.0" prefWidth="615.0">
+                                                         <children>
+                                                            <Label layoutX="7.0" layoutY="6.0" prefHeight="46.0" prefWidth="186.0" text="人员详细信息">
+                                                               <font>
+                                                                  <Font name="KaiTi" size="29.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <GridPane layoutX="7.0" layoutY="61.0" prefHeight="304.0" prefWidth="595.0">
+                                                               <columnConstraints>
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                               </columnConstraints>
+                                                               <rowConstraints>
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="48.20003356933593" minHeight="10.0" prefHeight="48.20003356933593" vgrow="SOMETIMES" />
+                                                                  <RowConstraints maxHeight="38.59996643066407" minHeight="10.0" prefHeight="38.59996643066407" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                               </rowConstraints>
+                                                               <children>
+                                                                  <Label prefHeight="30.0" prefWidth="70.0" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="个人ID：" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件类型：" GridPane.rowIndex="1" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="证件编号：" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口所在地：" GridPane.rowIndex="5" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="户口性质：" GridPane.rowIndex="4" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="离退休状态：" GridPane.rowIndex="3" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="定点医疗机构编号：" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="婚姻状况：" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="政治面貌：" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="文化程度：" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="民族：" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="性别：" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="姓名：" GridPane.columnIndex="2" />
+                                                                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="101.0" text="医疗人员类别：" GridPane.rowIndex="6" />
+                                                                  <Label fx:id="personIDLabel1" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="1" />
+                                                                  <Label fx:id="personNameLabel1" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="3" />
+                                                                  <Label fx:id="personInstitutionIDLabel1" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                                                  <Label fx:id="personCategoryLabel1" alignment="CENTER" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                               </children>
+                                                            </GridPane>
+                                                            <Button fx:id="deletePersonButton" layoutX="343.0" layoutY="395.0" mnemonicParsing="false" onAction="#deletePerson" prefHeight="37.0" prefWidth="82.0" text="删除" />
+                                                            <Button fx:id="backToMenuButton" layoutX="505.0" layoutY="395.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="单位信息维护">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <SplitPane dividerPositions="0.30146721687299405" prefHeight="499.0" prefWidth="874.0">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="347.0">
+                                            <children>
+                                                <TableView fx:id="companyTable" prefHeight="271.0" prefWidth="259.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="companyIDColumn" prefWidth="120.7999878525734" text="单位编号（ID）" />
+                                                        <TableColumn fx:id="companyNameColumn" prefWidth="139.20001220703125" text="单位名称" />
+                                                    </columns>
+                                                </TableView>
+                                                <TextField fx:id="searchCompanyField" layoutX="49.0" layoutY="319.0" prefHeight="28.0" prefWidth="161.0" promptText="请输入单位ID/名称" />
+                                                <Button fx:id="searchCompanyButton" layoutX="97.0" layoutY="395.0" mnemonicParsing="false" onAction="#searchCompany" prefHeight="28.0" prefWidth="63.0" text="查询" />
+                                            </children>
+                                        </AnchorPane>
+                              <TabPane prefHeight="498.0" prefWidth="614.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="查看单位信息">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <AnchorPane layoutX="20.0" layoutY="20.0" minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="523.0">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="186.0" text="单位详细信息">
+                                                         <font>
+                                                            <Font name="KaiTi" size="29.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <GridPane layoutX="20.0" layoutY="67.0" prefHeight="251.0" prefWidth="344.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="120.0" text="单位ID：" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="132.0" text="联系电话：" GridPane.rowIndex="4" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="邮编：" GridPane.rowIndex="3" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="地址：" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="单位名称：" GridPane.rowIndex="1" />
+                                                         </children>
+                                                      </GridPane>
+                                                      <Button fx:id="backToMenuButton1" layoutX="458.0" layoutY="393.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="新增单位信息">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="backToMenuButton" layoutX="500.0" layoutY="374.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                <Button fx:id="addCompanyButton" layoutX="267.0" layoutY="372.0" mnemonicParsing="false" onAction="#addCompany" prefHeight="39.0" prefWidth="72.0" text="新增" />
+                                                <GridPane layoutX="30.0" layoutY="77.0" prefHeight="251.0" prefWidth="344.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="120.0" text="单位ID：" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="132.0" text="联系电话：" GridPane.rowIndex="4" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="邮编：" GridPane.rowIndex="3" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="地址：" GridPane.rowIndex="2" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="单位名称：" GridPane.rowIndex="1" />
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="修改单位信息">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="backToMenuButton" layoutX="502.0" layoutY="377.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                <Button fx:id="changeCompanyButton" layoutX="266.0" layoutY="376.0" mnemonicParsing="false" onAction="#changeCompany" prefHeight="38.0" prefWidth="74.0" text="修改" />
+                                                <GridPane layoutX="30.0" layoutY="77.0" prefHeight="251.0" prefWidth="344.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="120.0" text="单位ID：" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="132.0" text="联系电话：" GridPane.rowIndex="4" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="邮编：" GridPane.rowIndex="3" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="地址：" GridPane.rowIndex="2" />
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="单位名称：" GridPane.rowIndex="1" />
+                                                   </children>
+                                                </GridPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="删除单位信息">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Button fx:id="backToMenuButton2" layoutX="501.0" layoutY="363.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="37.0" prefWidth="82.0" text="返回Menu" />
+                                                <Button fx:id="deleteCompanyButton" layoutX="262.0" layoutY="363.0" mnemonicParsing="false" onAction="#deleteCompany" prefHeight="37.0" prefWidth="82.0" text="删除" />
+                                                <AnchorPane layoutX="30.0" layoutY="30.0" minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="523.0">
+                                                   <children>
+                                                      <Label layoutX="14.0" layoutY="14.0" prefHeight="46.0" prefWidth="186.0" text="单位详细信息">
+                                                         <font>
+                                                            <Font name="KaiTi" size="29.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <GridPane layoutX="20.0" layoutY="67.0" prefHeight="251.0" prefWidth="344.0">
+                                                         <columnConstraints>
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                         </columnConstraints>
+                                                         <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                         </rowConstraints>
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="120.0" text="单位ID：" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="132.0" text="联系电话：" GridPane.rowIndex="4" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="130.0" text="邮编：" GridPane.rowIndex="3" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="126.0" text="地址：" GridPane.rowIndex="2" />
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="26.0" prefWidth="127.0" text="单位名称：" GridPane.rowIndex="1" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                                    </items>
+                                </SplitPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

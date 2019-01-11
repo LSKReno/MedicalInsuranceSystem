@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="527.0" prefWidth="873.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReimbursementController">
+   <children>
+      <SplitPane dividerPositions="0.28453418999541075" prefHeight="527.0" prefWidth="873.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="218.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="35.0" prefHeight="89.0" prefWidth="190.0" text="报销系统">
+                     <font>
+                        <Font name="Felix Titling" size="27.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="searchButton" layoutX="87.0" layoutY="413.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="73.0" text="查询">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchField" layoutX="45.0" layoutY="294.0" promptText="请输入人员ID/姓名" />
+                  <ImageView fitHeight="115.0" fitWidth="214.0" layoutX="17.0" layoutY="137.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@background1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="313.0" fitWidth="841.0" layoutX="-5.0" layoutY="-83.0" opacity="0.27" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@background3.jpg" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="InformationTable" layoutX="-1.0" layoutY="29.0" prefHeight="198.0" prefWidth="626.0">
+                    <columns>
+                      <TableColumn fx:id="personIDColumn" prefWidth="52.79997253417969" text="人员ID" />
+                      <TableColumn fx:id="personNameColumn" prefWidth="59.20001220703125" text="人员姓名" />
+                        <TableColumn fx:id="institutionIDColumn" prefWidth="98.4000244140625" text="定点医疗机构ID" />
+                        <TableColumn fx:id="personalExpenseColumn" prefWidth="111.20001220703125" text="本年个人自费累计" />
+                        <TableColumn fx:id="reimbursementColumn" prefWidth="107.2000732421875" text="本年中心报销累计" />
+                        <TableColumn fx:id="expenseColumn" minWidth="0.0" prefWidth="112.800048828125" text="本年医疗费用累计" />
+                        <TableColumn fx:id="topLineColumn" prefWidth="86.4000244140625" text="封顶线" />
+                        <TableColumn prefWidth="75.0" text="Column X" />
+                    </columns>
+                  </TableView>
+                  <ImageView fitHeight="313.0" fitWidth="651.0" layoutX="-1.0" layoutY="227.0" opacity="0.14" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@background2.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="-2.0" layoutY="3.0" prefHeight="26.0" prefWidth="609.0" text="年度医疗报销表">
+                     <font>
+                        <Font name="FangSong" size="20.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="14.0" layoutY="251.0" prefHeight="138.0" prefWidth="556.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="医疗类别：" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <tooltip>
+                              <Tooltip text="11=在职职工  21=退休人员   40=享受最低保障的在职人员  41=享受最低保障的退休人员" />
+                           </tooltip>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="人员姓名：" GridPane.columnIndex="2" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="出院日期：" GridPane.rowIndex="3" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="疾病ID：" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="医疗机构ID：" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="入院日期：" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="人员ID：" />
+                        <TextField fx:id="institutionField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="drugIDField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="medicalCategoryField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <DatePicker fx:id="admissionDate" promptText="入院日期" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="dischargeDate" promptText="出院日期" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="personIDField" GridPane.columnIndex="1" />
+                        <TextField fx:id="personNameField" GridPane.columnIndex="3" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="142.0" text="是否审批：" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <tooltip>
+                              <Tooltip text="0=没审批或审批中或不通过   1=审批通过1  符合定点医疗机构的填1" />
+                           </tooltip>
+                        </Label>
+                        <TextField fx:id="examineField" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <tooltip>
+                              <Tooltip text="0=没审批或审批中或不通过   1=审批通过1  符合定点医疗机构的填1" />
+                           </tooltip>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <Label alignment="CENTER" layoutX="1.0" layoutY="229.0" prefHeight="22.0" prefWidth="620.0" text="人员就诊报销信息录入表" />
+                  <Button fx:id="backButton" layoutX="495.0" layoutY="438.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="38.0" prefWidth="86.0" text="返回Menu" />
+                  <Button fx:id="startReimbursementButton" layoutX="204.0" layoutY="438.0" mnemonicParsing="false" onAction="#startReimbursement" prefHeight="38.0" prefWidth="119.0" text="开始报销" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

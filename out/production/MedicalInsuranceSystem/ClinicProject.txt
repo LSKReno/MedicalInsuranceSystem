@@ -1,0 +1,4 @@
+项目ID,项目名称,收费项目等级,医院等级
+0001,x_ray,2,2
+0002,massage,3,3
+0003,Appendicitis Operation,1,2

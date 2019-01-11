@@ -1,0 +1,26 @@
+/*.root {*/
+    /*-fx-background-image: url("background.jpg");!* 设置背景图 *!*/
+/*}*/
+
+/*设置button背景颜色*/
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+/*.label {*/
+    /*!* 设置字体 *!*/
+    /*-fx-font-size: 27px;*/
+    /*-fx-font-weight: bold;*/
+    /*-fx-text-fill: #333333;*/
+    /*-fx-font-family: FZShuTi;*/
+    /*!* 设置阴影 *!*/
+    /*-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );*/
+/*}*/
+
+
+
+
+
+
+
+
+

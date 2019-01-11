@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="517.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StartReimbursement">
+   <children>
+      <SplitPane dividerPositions="0.20066889632107024" prefHeight="517.0" prefWidth="874.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="95.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="48.0" layoutY="14.0" prefHeight="418.0" prefWidth="76.0" text="国家医疗保险报销中心" wrapText="true">
+                     <font>
+                        <Font name="FangSong" size="38.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="452.0" prefWidth="597.0">
+               <children>
+                  <TableView fx:id="ReimbursementTable" prefHeight="199.0" prefWidth="694.0">
+                    <columns>
+                      <TableColumn fx:id="personIDColumn" prefWidth="100.00003355741501" text="人员ID" />
+                      <TableColumn fx:id="admissionIDColumn" prefWidth="120.79998779296875" text="门诊号ID" />
+                        <TableColumn fx:id="projectCategoryColumn" prefWidth="171.1999053955078" text="收费项目类别" />
+                        <TableColumn fx:id="projectNameColumn" minWidth="0.0" prefWidth="138.4000244140625" text="项目名称" />
+                        <TableColumn fx:id="expenseColumn" prefWidth="152.0" text="总价" />
+                    </columns>
+                  </TableView>
+                  <TabPane layoutY="198.0" prefHeight="315.0" prefWidth="703.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="药品">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="671.0">
+                                 <children>
+                                    <GridPane fx:id="myPersonGridPane" layoutX="7.0" layoutY="15.0" prefHeight="254.0" prefWidth="387.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="personIDLabel" GridPane.columnIndex="1" />
+                                          <TextField fx:id="admissionIDLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="projectNameLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="expenseLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="人员ID：" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="总价：" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="药品名称：" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="收费项目类别：" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="门诊号ID：" GridPane.rowIndex="1" />
+                                          <Label fx:id="drugLabel" alignment="CENTER" prefHeight="21.0" prefWidth="196.0" text="药品" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="budgetButton" layoutX="598.0" layoutY="15.0" mnemonicParsing="false" onAction="#budget1" prefHeight="34.0" prefWidth="90.0" text="预结算" />
+                                    <Button fx:id="reimbursementButton" layoutX="598.0" layoutY="58.0" mnemonicParsing="false" onAction="#reimbursement" prefHeight="34.0" prefWidth="90.0" text="报销" />
+                                    <Button fx:id="cancelReimbursementButton" layoutX="598.0" layoutY="132.0" mnemonicParsing="false" onAction="#cancelReimbursement" prefHeight="34.0" prefWidth="90.0" text="取消报销" />
+                                    <Button fx:id="backButton" layoutX="598.0" layoutY="179.0" mnemonicParsing="false" onAction="#backToScene" prefHeight="34.0" prefWidth="90.0" text="返回" />
+                                    <Button fx:id="drugSearch" layoutX="442.0" layoutY="180.0" mnemonicParsing="false" onAction="#drugSearch" prefHeight="25.0" prefWidth="65.0" text="检索" />
+                                    <Label fx:id="search1" alignment="CENTER" layoutX="420.0" layoutY="157.0" prefHeight="18.0" prefWidth="109.0" textFill="#fd0202" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="诊疗项目">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="myPersonGridPane1" layoutX="14.0" layoutY="15.0" prefHeight="254.0" prefWidth="387.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="personIDLabel1" GridPane.columnIndex="1" />
+                                          <TextField fx:id="admissionIDLabel1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="projectNameLabel1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="expenseLabel1" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="人员ID：" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="总价：" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="项目名称：" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="收费项目类别：" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="门诊号ID：" GridPane.rowIndex="1" />
+                                          <Label fx:id="clinicProjectLabel" alignment="CENTER" prefHeight="21.0" prefWidth="196.0" text="诊疗项目" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="budgetButton1" layoutX="598.0" layoutY="24.0" mnemonicParsing="false" onAction="#budget2" prefHeight="34.0" prefWidth="90.0" text="预结算" />
+                                    <Button fx:id="reimbursementButton1" layoutX="598.0" layoutY="69.0" mnemonicParsing="false" onAction="#reimbursement" prefHeight="34.0" prefWidth="90.0" text="报销" />
+                                    <Button fx:id="cancelReimbursementButton1" layoutX="598.0" layoutY="142.0" mnemonicParsing="false" onAction="#cancelReimbursement" prefHeight="34.0" prefWidth="90.0" text="取消报销" />
+                                    <Button fx:id="backButton1" layoutX="598.0" layoutY="189.0" mnemonicParsing="false" onAction="#backToScene" prefHeight="34.0" prefWidth="90.0" text="返回" />
+                                    <Button fx:id="projectSearch" layoutX="439.0" layoutY="179.0" mnemonicParsing="false" onAction="#projectSearch" prefHeight="25.0" prefWidth="65.0" text="检索" />
+                                    <Label fx:id="search2" alignment="CENTER" layoutX="417.0" layoutY="159.0" prefHeight="18.0" prefWidth="109.0" textFill="#f00505" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="服务设施">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <GridPane fx:id="myPersonGridPane11" layoutX="14.0" layoutY="15.0" prefHeight="254.0" prefWidth="387.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="personIDLabel11" GridPane.columnIndex="1" />
+                                          <TextField fx:id="admissionIDLabel11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <TextField fx:id="projectNameLabel11" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="expenseLabel11" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="人员ID：" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="总价：" GridPane.rowIndex="4" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="设施名称：" GridPane.rowIndex="3" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="收费项目类别：" GridPane.rowIndex="2" />
+                                          <Label alignment="CENTER" prefHeight="26.0" prefWidth="121.0" text="门诊号ID：" GridPane.rowIndex="1" />
+                                          <Label fx:id="ServiceFacilityLabel" alignment="CENTER" prefHeight="21.0" prefWidth="196.0" text="服务设施" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <Button fx:id="backButton2" layoutX="598.0" layoutY="189.0" mnemonicParsing="false" onAction="#backToScene" prefHeight="34.0" prefWidth="90.0" text="返回" />
+                                    <Button fx:id="cancelReimbursementButton2" layoutX="598.0" layoutY="142.0" mnemonicParsing="false" onAction="#cancelReimbursement" prefHeight="34.0" prefWidth="90.0" text="取消报销" />
+                                    <Button fx:id="reimbursementButton2" layoutX="598.0" layoutY="67.0" mnemonicParsing="false" onAction="#reimbursement" prefHeight="34.0" prefWidth="90.0" text="报销" />
+                                    <Button fx:id="budgetButton2" layoutX="598.0" layoutY="23.0" mnemonicParsing="false" onAction="#budget3" prefHeight="34.0" prefWidth="90.0" text="预结算" />
+                                    <Button fx:id="facilitySearch" layoutX="451.0" layoutY="180.0" mnemonicParsing="false" onAction="#facilitySearch" prefHeight="25.0" prefWidth="65.0" text="检索" />
+                                    <Label fx:id="search3" alignment="CENTER" layoutX="429.0" layoutY="159.0" prefHeight="18.0" prefWidth="109.0" textFill="#f20000" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab text="未结算入院信息查询">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="searchUnreimbursedBudgetField" layoutX="151.0" layoutY="50.0" prefHeight="27.0" prefWidth="217.0" promptText="请输入人员ID" />
+                                    <Button fx:id="searchUnreimbursedBudgetButton" layoutX="416.0" layoutY="137.0" mnemonicParsing="false" onAction="#searchUnreimbursedBudget" prefHeight="26.0" prefWidth="76.0" text="查询" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

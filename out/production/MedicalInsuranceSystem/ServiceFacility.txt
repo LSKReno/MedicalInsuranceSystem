@@ -1,0 +1,6 @@
+设施编码,设施名称
+0001,wheelchair
+0002,bed
+0003,walking stick
+0004,Nursing workers
+0005,Holter

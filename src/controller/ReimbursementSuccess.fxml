@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="517.6" prefWidth="874.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReimbursementSuccess">
+   <children>
+      <ImageView fitHeight="649.0" fitWidth="1048.0" layoutX="-53.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@background1.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="backButton" layoutX="361.0" layoutY="444.0" mnemonicParsing="false" onAction="#back" prefHeight="29.0" prefWidth="151.0" text="返回" />
+      <Label layoutX="100.0" layoutY="59.0" prefHeight="30.0" prefWidth="94.0" />
+      <Label alignment="CENTER" layoutX="319.0" layoutY="14.0" prefHeight="39.0" prefWidth="234.0" text="本次报销明细表">
+         <font>
+            <Font name="FangSong" size="26.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="215.0" layoutY="83.0" prefHeight="283.0" prefWidth="466.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="182.0" text="本次花费金额：">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="178.0" text="年度剩余报销基金：" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="178.0" text="年度报销金额：" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="34.0" prefWidth="178.0" text="本次报销金额：" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="33.0" prefWidth="179.0" text="本次自费金额：" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="thisExpense" alignment="CENTER" prefHeight="34.0" prefWidth="182.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="annualLeftMoney" alignment="CENTER" prefHeight="34.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="annualReimMoney" alignment="CENTER" prefHeight="34.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="thisReimExpense" alignment="CENTER" prefHeight="34.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="thisPersonalExpense" alignment="CENTER" prefHeight="34.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Button fx:id="printButton" layoutX="750.0" layoutY="448.0" mnemonicParsing="false" onAction="#print" prefHeight="21.0" prefWidth="82.0" text="打印表单" />
+   </children>
+</AnchorPane>
