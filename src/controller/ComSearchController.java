@@ -53,9 +53,8 @@ public class ComSearchController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        ComSearchStage.close();
-//        Main.getPrimaryStage();
     }
+
 //    public void goToMain(){
 //        myController.setStage(MainApp.mainViewID);
 //    }
