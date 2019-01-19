@@ -1,5 +1,5 @@
 # MedicalInsuranceSystem
-东北大学软院大一下课设，医疗保险报销系统JavaFx  
+课设，医疗保险报销系统JavaFx  
 各位学弟学妹觉得还行的话请给个Star哦  
  
 ### LoginUI
